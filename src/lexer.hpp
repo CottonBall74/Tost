@@ -1,4 +1,4 @@
-// a laxer for the language
+// a lexer for the language
 // lazer is a program that takes a string of characters and converts it into a sequence of tokens
 
 #pragma once
@@ -16,6 +16,7 @@ namespace Tost
         RETURN,
 
         IF,
+        ELSE_IF,
         ELSE,
 
         WHILE,
@@ -74,11 +75,11 @@ namespace Tost
 
 
 
-    class Laxer
+    class Lexer
     {
     public:
-        Laxer(const std::string& source);
-        ~Laxer();
+        Lexer(const std::string& source);
+        ~Lexer();
 
         Token GetNextToken();
 

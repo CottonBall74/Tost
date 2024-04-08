@@ -1,21 +1,19 @@
-#include "laxer.hpp"
+#include "lexer.hpp"
 
-#include <buffertream>
+#include <sstream>
 
 
 namespace Tost
 {
-    Laxer::Laxer(const std::string& source)
+    Lexer::Lexer(const std::string& source)
         : m_source(source), m_position(0), m_line(1)
-    {
-    }
+    {}
 
-    Laxer::~Laxer()
-    {
-    }
+    Lexer::~Lexer()
+    {}
 
 
-    Token Laxer::GetNextToken()
+    Token Lexer::GetNextToken()
     {
         if(m_position >= m_source.size())
             return Token{TokenType::EOF_TOKEN, ""};
@@ -113,7 +111,7 @@ namespace Tost
 
 
     // Parse Functions
-    Token Laxer::parseStringLit()
+    Token Lexer::parseStringLit()
     {
         std::stringstream buffer;
         m_position++;
@@ -131,7 +129,7 @@ namespace Tost
         return Token{TokenType::STRING, buffer.str()};
     }
 
-    Token Laxer::parseNumber()
+    Token Lexer::parseNumber()
     {
         std::stringstream buffer;
         while(isdigit(m_source[m_position]))
@@ -143,7 +141,7 @@ namespace Tost
         return Token{TokenType::NUMBER, buffer.str()};
     }
 
-    Token Laxer::parseIdentifier()
+    Token Lexer::parseIdentifier()
     {
         std::stringstream buffer;
         while(isalnum(m_source[m_position]))
