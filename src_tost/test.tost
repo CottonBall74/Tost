@@ -1,2 +1,13 @@
-# this is a comment
-Log("Hello");
+# this is how you comment in TOST
+
+# this is a variable btw (onlt INT supported for now)
+int health = 100;
+int power = 1000;
+
+Log("Health");
+Log(health);
+
+Log("Power");
+Log(power);
+
+Log(both);
