@@ -1,13 +1,6 @@
-# this is how you comment in TOST
+int a = 5;
 
-# this is a variable btw (onlt INT supported for now)
-int health = 100;
-int power = 1000;
-
-Log("Health");
-Log(health);
-
-Log("Power");
-Log(power);
-
-Log(both);
+if(a == 5)
+{
+    Log("LAA");
+}
